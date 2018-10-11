@@ -1,9 +1,6 @@
 package ECSTest.Testing;
 
-/**
- * Hello world!
- *
- */
+
 public class App 
 {
     public static void main( String[] args )
