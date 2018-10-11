@@ -6,7 +6,7 @@ import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
-
+import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
@@ -15,7 +15,6 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 
 public class ECSTest1Suite {
-	
 	
 	protected WebDriver driver;
 	
@@ -38,6 +37,11 @@ public class ECSTest1Suite {
 	@After
 	public void tearDown() throws InterruptedException {
 		driver.quit();
+	}
+	
+	@Test
+	public void ServerSetup() {
+		
 	}
 	
 }
