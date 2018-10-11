@@ -58,7 +58,7 @@ public class ECSTest1 {
 			getIntEqualSum[i] = ECSTest1.getIntEqualSum(webPageArray[i]);
 		}
 		writeResultsToPage(driver, getIntEqualSum);
-//		submitResults(driver);
+		submitResults(driver);
 	}
 	
 	public static void submitResults(WebDriver driver) {
