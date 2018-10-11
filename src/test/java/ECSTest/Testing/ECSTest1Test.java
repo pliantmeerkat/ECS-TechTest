@@ -2,14 +2,25 @@ package ECSTest.Testing;
 
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import ECSTest.Testing.lib.ECSTest1;
+import ECSTest.Testing.lib.ECSTest1Setup;
 
 public class ECSTest1Test extends ECSTest1Suite{
+	
+	@Test
+	public void seleniumInitializeWorksCorrectly() {
+		try {
+			ECSTest1Setup.seleniumIntialize(driver);
+		} catch(Exception e) {
+			fail("Exception should not be thrown");
+		}
+	}
 
 	@Test
 	public void getAllArrayVars() {

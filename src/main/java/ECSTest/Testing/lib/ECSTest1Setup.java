@@ -14,5 +14,5 @@ public class ECSTest1Setup {
 	public static void seleniumIntialize(WebDriver driver) {
 		driver.get("http://localhost:3000/");
 		driver.findElement(By.cssSelector("[data-test-id='render-challenge']")).click();
-	}
+	} 
 }
