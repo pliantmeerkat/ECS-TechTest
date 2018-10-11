@@ -6,34 +6,35 @@ import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
-import org.openqa.selenium.By;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import ECSTest.Testing.lib.ECSTest1Setup;
 import io.github.bonigarcia.wdm.WebDriverManager;
+
 
 public class ECSTest1Suite {
 	
 	private static Process p;
-	private static String scriptPath = System.getProperty("user.dir") + "\\src\\test\\scripts\\";
 	protected WebDriver driver;
 	
 	@BeforeClass
 	public static void runYarnStartScript() throws IOException {
-		p = new ProcessBuilder("cmd", "/k", scriptPath + "\\yarnStart.sh").start();	
+		WebDriverManager.firefoxdriver().setup();
+		p = new ProcessBuilder("cmd", "/k", ECSTest1Setup.scriptPath + "\\yarnStart.sh").start();	
 	}
 	
 	@AfterClass
 	public static void exitYarnEndScript() throws IOException {
+		Runtime.getRuntime().exec("taskkill /F /IM geckodriver.exe"); // for geckodriver
 		p.destroy();
 	}
 	
 	@Before
 	public void initialize() throws IOException {
-		WebDriverManager.firefoxdriver().setup();
 		driver = new FirefoxDriver();
-		driver.get("http://localhost:3000/");
-		driver.findElement(By.cssSelector("[data-test-id='render-challenge']")).click();
+		ECSTest1Setup.seleniumIntialize(driver);
 	}
 	
 	@After

@@ -9,7 +9,7 @@ import org.openqa.selenium.WebElement;
 
 public class ECSTest1 {
 
-	private ECSTest1() {}
+	private ECSTest1() { }
 	
 	public static int[][] getTableRowAsArray(WebDriver driver) {
 		WebElement tableBody = driver.findElement(By.tagName("tbody"));
@@ -49,6 +49,16 @@ public class ECSTest1 {
 		driver.findElement(By.cssSelector("[data-test-id='submit-2']")).sendKeys(String.valueOf(results[1]));
 		driver.findElement(By.cssSelector("[data-test-id='submit-3']")).sendKeys(String.valueOf(results[2]));
 		driver.findElement(By.cssSelector("[data-test-id='submit-4']")).sendKeys("Jack Branch");
+	}
+	
+	public static void fullRunCycle(WebDriver driver) {
+		int[][] webPageArray = ECSTest1.getTableRowAsArray(driver);
+		int[] getIntEqualSum = new int[webPageArray.length];
+		for(int i = 0; i < webPageArray.length; i ++) {
+			getIntEqualSum[i] = ECSTest1.getIntEqualSum(webPageArray[i]);
+		}
+		writeResultsToPage(driver, getIntEqualSum);
+//		submitResults(driver);
 	}
 	
 	public static void submitResults(WebDriver driver) {

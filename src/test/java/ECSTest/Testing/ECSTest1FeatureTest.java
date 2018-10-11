@@ -12,15 +12,9 @@ import ECSTest.Testing.lib.ECSTest1;
 public class ECSTest1FeatureTest extends ECSTest1Suite {
 
 	@Test
-	public void FullRunCycleTest() {
+	public void fullRunCycleTest() {
 		String expectedResult = "close";
-		int[][] webPageArray = ECSTest1.getTableRowAsArray(driver);
-		int[] getIntEqualSum = new int[webPageArray.length];
-		for(int i = 0; i < webPageArray.length; i ++) {
-			getIntEqualSum[i] = ECSTest1.getIntEqualSum(webPageArray[i]);
-		}
-		ECSTest1.writeResultsToPage(driver, getIntEqualSum);
-		ECSTest1.submitResults(driver);
+		ECSTest1.fullRunCycle(driver);
 		try {
 			WebElement closeButton = driver.findElements(By.tagName("button")).get(2);
 			assertEquals(expectedResult, closeButton.getText().toLowerCase());
