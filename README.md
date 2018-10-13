@@ -1,4 +1,4 @@
-# ECS-TechTest
+# ECS-TechTest   [![Build Status](https://travis-ci.com/pliantmeerkat/ECS-TechTest.svg?branch=master)](https://travis-ci.com/pliantmeerkat/ECS-TechTest)
 
 This repository contains all files required to run, test and contribute to my submission for the ECS Digital tech-test. This application automatically starts the web server on both application and test run settings. While the server automatically starts, the bash window it runs in must manually be closed using the command *Ctrl + c* due to problems closing the window using the created Java Process. In application mode the program will follow the instructions listed in the web page, which I will list below:
 
