@@ -4,4 +4,4 @@ install:
   mvn install -Dmaven.javadoc.skip=true -B -V
 
 scripts:
-  mvn test -B
+  # mvn test -B no tests as ecs web page not included
