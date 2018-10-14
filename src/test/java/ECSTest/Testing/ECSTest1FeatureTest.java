@@ -9,6 +9,7 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+import ECSTest.Testing.lib.ECSTest1;
 
 import static com.jayway.awaitility.Awaitility.await;
 import static java.util.concurrent.TimeUnit.SECONDS;
@@ -27,7 +28,7 @@ public class ECSTest1FeatureTest extends ECSTest1Suite {
 	public void fullRunCycleTest() throws InterruptedException {
 		String expectedButton = "close";
 		String expectedText = "Congratulations you have succeeded. Please submit your challenge";
-//		ECSTest1.fullRunCycle(driver);
+		ECSTest1.fullRunCycle(driver);
 		try {
 			WebElement closeButton = driver.findElements(By.tagName("button")).get(2);
 			WebElement popUp = driver.findElement(By.className("dialog"));
